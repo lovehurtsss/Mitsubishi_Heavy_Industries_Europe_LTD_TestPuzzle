@@ -1,0 +1,32 @@
+﻿<Window x:Class="WPF_Test_Mitsubishi_Mordak.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Test_Mitsubishi_Mordak"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="10,10,10,19">
+            <TextBlock Text="Mordak, Test Mitsubishi" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+            <TextBlock Text="Enter heights (comma-separated):" Margin="0,0,0,5"/>
+            <TextBox Name="HeightInput" Height="30" Padding="5" Margin="0,0,0,10" BorderBrush="#007ACC" BorderThickness="2" Background="WhiteSmoke" VerticalContentAlignment="Center"/>
+            <Button Content="Calculate" Height="30" Margin="0,0,0,5" Click="CalculateWaterTrapped"/>
+            <Button Content="Test with Example Data" Height="30" Margin="0,0,0,10" Click="TestWithExampleData"/>
+            <TextBlock Name="ResultText" FontSize="14" FontWeight="Bold" TextWrapping="Wrap"/>
+            <ListBox x:Name="TestResultsListBox" Width="760" Height="100" Background="AliceBlue" HorizontalAlignment="Left" Margin="10,400,0,0"/>
+        </StackPanel>
+        
+        <Grid Grid.Column="1" Margin="10">
+            <Border BorderBrush="#007ACC" BorderThickness="2" Background="White">
+                <Canvas Name="VisualizationCanvas"/>
+            </Border>
+        </Grid>
+        
+    </Grid>
+</Window>
